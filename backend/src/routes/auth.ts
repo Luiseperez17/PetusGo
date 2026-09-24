@@ -1,7 +1,5 @@
 import { Router } from 'express';
-import { createClient } from '@supabase/supabase-js';
-import { env } from '../config/env';
-import { supabase } from '../lib/supabase';
+import { newSupabase, supabase } from '../lib/supabase';
 import { HttpError, wrap } from '../lib/errors';
 import { requireCustomer } from '../middleware/auth';
 import { requestCodeSchema, staffLoginSchema, verifyCodeSchema } from '../schemas/member';
@@ -10,10 +8,7 @@ import { withPhoto } from './members';
 export const authRouter = Router();
 
 // Cliente desechable: signIn/verify guardan sesión en el cliente y contaminarían el compartido (service_role).
-const authClient = () =>
-  createClient(env.supabaseUrl, env.supabaseServiceKey, {
-    auth: { persistSession: false, autoRefreshToken: false }
-  });
+const authClient = () => newSupabase({ persistSession: false, autoRefreshToken: false });
 
 // 1) Pide código. Siempre 200 (no revela si el correo existe); solo envía si es tutor registrado.
 authRouter.post('/auth/request-code', wrap(async (req, res) => {
