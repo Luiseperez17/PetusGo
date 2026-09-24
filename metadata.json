@@ -1,0 +1,6 @@
+{
+  "name": "Petus Go - Membresía Exclusiva para Mascotas",
+  "description": "Todo lo que tu mascota necesita en un solo GO! Membresía anual de beneficios exclusivos en alimento, farmacia, baño y consulta médica por Silveragro.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

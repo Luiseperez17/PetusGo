@@ -1,0 +1,21 @@
+# Uso: cp .env.docker.example .env && docker compose up --build -d
+services:
+  backend:
+    build: ./backend
+    restart: unless-stopped
+    env_file: .env          # SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, CORS_ORIGIN
+    environment:
+      PORT: 3001
+    ports:
+      - "3001:3001"
+
+  frontend:
+    build:
+      context: .
+      args:
+        VITE_API_URL: ${VITE_API_URL:-http://localhost:3001/api}
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      - "8080:80"

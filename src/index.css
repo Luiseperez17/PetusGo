@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+@theme {
+  --font-heading: 'Fredoka', 'Nunito', sans-serif;
+  --font-sans: 'Nunito', sans-serif;
+
+  --color-brand-sky: #73c3e8;
+  --color-brand-sky-light: #a1dcf5;
+  --color-brand-sky-soft: #eaf6fd;
+  --color-brand-sky-deep: #4196c2;
+  --color-brand-navy: #486377;
+  --color-brand-navy-dark: #364958;
+  --color-brand-cream: #faeed2;
+  --color-brand-gray-sub: #6f8391;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    color: var(--color-brand-navy-dark);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+.curved-hero-bg {
+  background-color: #73c3e8;
+  background-image: 
+    radial-gradient(circle at 85% 35%, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0) 50%),
+    radial-gradient(circle at 15% 85%, rgba(161, 220, 245, 0.45) 0%, rgba(115, 195, 232, 0) 45%),
+    url('https://lh3.googleusercontent.com/aida-public/AB6AXuCQIpftkNVxNs9pu0uUdlrab_qB5LjP6Q7ZAz8m5NDI9Vw5L3Wg3XCwP7lKILTY0UdpTvSo6n5GkASMstW97hN0YEQr_pZPY-e96AJWF70bDGOYh0UIavlFjd9nC99sZfmO-3twOwaTpa2UMHXgze50BkECEuyndGQmph7Qe5ihG35E5EYoyaJp-ZFyVt7YCd5xLYZw_Neh9MhmwxyckE3N5pi4slyi0K4rs5lrM4k-GddkLOBp2klxtn8aFT--NYPo-mo');
+  background-size: cover;
+  background-position: center;
+}
+
+.banner-bg-pattern {
+  background-color: #73c3e8;
+  background-image: 
+    radial-gradient(circle at 85% 50%, rgba(255, 255, 255, 0.25) 0%, transparent 60%),
+    url('https://lh3.googleusercontent.com/aida-public/AB6AXuD2pTfgrAMlkbep4tpZibE8X_ynVR1fwITFkeRGXJNJtclgdpddwX8HVENjO5Od4O6bmzGUduXuZt2vIyUELca9cRsikZqQPk_WGxGe5tD13SDomeUsnRneHCmYlC8dlRNOQjPTytaqimX2XONVNMIgkj1yOUNAdz4u8FWUT1dc9I6QyWJRRQbY3GqgQ5gEGkSEngRFAxMrD-zjdIgXjfmLxtCnCOI2whjOl4u1ejzAoMcACC7svaoiVICONxc4ewq4yC8');
+  background-size: cover;
+  background-position: center right;
+}
+
+.input-tutor::placeholder {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.input-mascota::placeholder {
+  color: #94a3b8;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #a1dcf5;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #73c3e8;
+}
