@@ -3,11 +3,11 @@ insert into food_brands(id,name) values
  ('taste','Taste of the Wild'),('monge','Monge Natural Superpremium');
 
 insert into food_presentations(brand_id,label,base_price) values
- ('rc','3 kg',768000000),('rc','7.5 kg',768000000),('rc','15 kg',768000000),
- ('hills','2.5 kg',832000000),('hills','7 kg',832000000),('hills','14 kg',832000000),
- ('proplan','3 kg',720000000),('proplan','7.5 kg',720000000),('proplan','15 kg',720000000),
- ('taste','2 kg',896000000),('taste','5.6 kg',896000000),('taste','12.2 kg',896000000),
- ('monge','2.5 kg',672000000),('monge','12 kg',672000000);
+ ('rc','3 kg',192000),('rc','7.5 kg',192000),('rc','15 kg',192000),
+ ('hills','2.5 kg',208000),('hills','7 kg',208000),('hills','14 kg',208000),
+ ('proplan','3 kg',180000),('proplan','7.5 kg',180000),('proplan','15 kg',180000),
+ ('taste','2 kg',224000),('taste','5.6 kg',224000),('taste','12.2 kg',224000),
+ ('monge','2.5 kg',168000),('monge','12 kg',168000);
 
 insert into pharmacy_products(id,name,category,normal_price) values
  ('bravecto','Bravecto Antiparasitario (1 tableta masticable - 3 meses)','Antiparasitario',152000),
