@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ASSETS } from '../constants/assets';
 import { PHARMACY_PRODUCTS } from '../constants/data';
 import { ShieldCheck, ArrowRight, Percent, Sparkles, CheckCircle } from 'lucide-react';
+import { formatCOP } from '../lib/money';
 
 interface PharmacySectionProps {
   onCtaClick: () => void;
@@ -14,8 +15,8 @@ export const PharmacySection: React.FC<PharmacySectionProps> = ({
 }) => {
   // Quick interactive product price tester
   const [selectedProduct, setSelectedProduct] = useState(PHARMACY_PRODUCTS[0]);
-  const discountedPrice = (selectedProduct.normalPrice * 0.85).toFixed(2);
-  const savings = (selectedProduct.normalPrice * 0.15).toFixed(2);
+  const discountedPrice = formatCOP(Math.round(selectedProduct.normalPrice * 0.85));
+  const savings = formatCOP(Math.round(selectedProduct.normalPrice * 0.15));
 
   return (
     <section id="farmacia" className="py-16 md:py-24 bg-white relative overflow-hidden">
@@ -52,7 +53,7 @@ export const PharmacySection: React.FC<PharmacySectionProps> = ({
                   Comprueba tu ahorro en medicamentos:
                 </span>
                 <span className="text-xs font-extrabold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-md">
-                  Ahorras ${savings}
+                  Ahorras {savings}
                 </span>
               </div>
 
@@ -73,8 +74,8 @@ export const PharmacySection: React.FC<PharmacySectionProps> = ({
 
               <div className="flex items-center justify-between pt-1 text-xs">
                 <div>
-                  <span className="text-slate-400 line-through mr-2">${selectedProduct.normalPrice.toFixed(2)}</span>
-                  <span className="text-base font-extrabold text-[#486377]">${discountedPrice}</span>
+                  <span className="text-slate-400 line-through mr-2">{formatCOP(selectedProduct.normalPrice)}</span>
+                  <span className="text-base font-extrabold text-[#486377]">{discountedPrice}</span>
                   <span className="text-[11px] text-slate-500 ml-1.5">precio Petus Go</span>
                 </div>
 

@@ -4,6 +4,7 @@ import {
   api, getStaff, staffLogin, staffLogout,
   type Catalog, type History, type MemberDetail, type MemberRow, type StaffSession, type Stats
 } from './adminApi';
+import { formatCOP } from '../lib/money';
 
 const STATUS_STYLE: Record<string, string> = {
   pendiente: 'bg-amber-100 text-amber-700',
@@ -12,7 +13,7 @@ const STATUS_STYLE: Record<string, string> = {
   cancelada: 'bg-rose-100 text-rose-700'
 };
 const BENEFIT_LABEL = { bolsa_gratis: 'Bolsa gratis', bano: 'Baño', consulta: 'Consulta' } as const;
-const money = (n: number) => `$${n.toLocaleString('es-CO', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+const money = formatCOP;
 const date = (s?: string | null) => (s ? new Date(s).toLocaleDateString('es-CO') : '—');
 const msg = (e: unknown) => (e instanceof Error ? e.message : 'Error inesperado');
 

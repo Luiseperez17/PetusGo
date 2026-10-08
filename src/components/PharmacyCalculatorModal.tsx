@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { PHARMACY_PRODUCTS } from '../constants/data';
 import { X, Percent, Check, Plus, Minus, ShieldCheck, ArrowRight } from 'lucide-react';
+import { formatCOP } from '../lib/money';
 
 interface PharmacyCalculatorModalProps {
   isOpen: boolean;
@@ -70,7 +71,7 @@ export const PharmacyCalculatorModal: React.FC<PharmacyCalculatorModalProps> = (
           <div className="space-y-2.5 max-h-72 overflow-y-auto pr-1">
             {PHARMACY_PRODUCTS.map((prod) => {
               const qty = quantities[prod.id] || 0;
-              const unitDiscounted = (prod.normalPrice * 0.85).toFixed(2);
+              const unitDiscounted = formatCOP(Math.round(prod.normalPrice * 0.85));
               return (
                 <div
                   key={prod.id}
@@ -83,8 +84,8 @@ export const PharmacyCalculatorModal: React.FC<PharmacyCalculatorModalProps> = (
                   <div className="flex-1 min-w-0">
                     <p className="text-xs font-bold text-[#486377] truncate">{prod.name}</p>
                     <div className="flex items-center gap-2 mt-0.5 text-[11px]">
-                      <span className="text-slate-400 line-through">${prod.normalPrice.toFixed(2)}</span>
-                      <span className="font-extrabold text-[#73c3e8]">${unitDiscounted} c/u</span>
+                      <span className="text-slate-400 line-through">{formatCOP(prod.normalPrice)}</span>
+                      <span className="font-extrabold text-[#73c3e8]">{unitDiscounted} c/u</span>
                       <span className="text-[10px] text-slate-400">({prod.category})</span>
                     </div>
                   </div>
@@ -118,15 +119,15 @@ export const PharmacyCalculatorModal: React.FC<PharmacyCalculatorModalProps> = (
           <div className="p-5 rounded-2xl bg-gradient-to-r from-[#eaf6fd] to-slate-50 border border-[#a1dcf5] space-y-2">
             <div className="flex justify-between text-xs text-slate-500">
               <span>Gasto regular sin membresía:</span>
-              <span className="line-through">${totalRegular.toFixed(2)}</span>
+              <span className="line-through">{formatCOP(totalRegular)}</span>
             </div>
             <div className="flex justify-between text-xs text-emerald-600 font-bold">
               <span>Tu Ahorro 15% con Petus Go:</span>
-              <span>-${totalDiscount.toFixed(2)}</span>
+              <span>-{formatCOP(totalDiscount)}</span>
             </div>
             <div className="pt-2 border-t border-slate-200 flex justify-between items-baseline">
               <span className="text-sm font-extrabold text-[#486377]">Total anual estimado con Petus Go:</span>
-              <span className="text-2xl font-black text-[#73c3e8]">${totalPetusGo.toFixed(2)}</span>
+              <span className="text-2xl font-black text-[#73c3e8]">{formatCOP(totalPetusGo)}</span>
             </div>
           </div>
 

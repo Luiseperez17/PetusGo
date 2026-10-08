@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { PET_FOOD_BRANDS } from '../constants/data';
 import { X, Check, Gift, Sparkles, RefreshCw, Award, ShoppingBag, ArrowRight } from 'lucide-react';
+import { formatCOP } from '../lib/money';
 
 interface SimuladorModalProps {
   isOpen: boolean;
@@ -37,8 +38,8 @@ export const SimuladorModal: React.FC<SimuladorModalProps> = ({
     setPurchasedCount(0);
   };
 
-  const totalSpent = (purchasedCount * bagPrice).toFixed(2);
-  const freeBagValue = bagPrice.toFixed(2);
+  const totalSpent = formatCOP(purchasedCount * bagPrice);
+  const freeBagValue = formatCOP(bagPrice);
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm overflow-y-auto animate-in fade-in duration-200">
@@ -170,11 +171,11 @@ export const SimuladorModal: React.FC<SimuladorModalProps> = ({
           <div className="p-5 rounded-2xl bg-gradient-to-r from-[#eaf6fd] to-amber-50/50 border border-[#a1dcf5] grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
             <div>
               <p className="text-[11px] font-bold text-slate-400 uppercase">Total acumulado</p>
-              <p className="text-xl font-extrabold text-[#486377]">${totalSpent}</p>
+              <p className="text-xl font-extrabold text-[#486377]">{totalSpent}</p>
             </div>
             <div>
               <p className="text-[11px] font-bold text-slate-400 uppercase">Ahorro en bolsa 6</p>
-              <p className="text-xl font-extrabold text-emerald-600">+${freeBagValue} GRATIS</p>
+              <p className="text-xl font-extrabold text-emerald-600">+{freeBagValue} GRATIS</p>
             </div>
             <div>
               <p className="text-[11px] font-bold text-slate-400 uppercase">Ahorro efectivo</p>

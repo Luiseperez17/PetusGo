@@ -30,20 +30,20 @@ export const SAMPLE_MEMBER: MemberProfile = {
 };
 
 export const PET_FOOD_BRANDS = [
-  { id: 'rc', name: 'Royal Canin', presentations: ['3 kg', '7.5 kg', '15 kg'], basePrice: 48 },
-  { id: 'hills', name: 'Hill\'s Science Diet', presentations: ['2.5 kg', '7 kg', '14 kg'], basePrice: 52 },
-  { id: 'proplan', name: 'Purina Pro Plan', presentations: ['3 kg', '7.5 kg', '15 kg'], basePrice: 45 },
-  { id: 'taste', name: 'Taste of the Wild', presentations: ['2 kg', '5.6 kg', '12.2 kg'], basePrice: 56 },
-  { id: 'monge', name: 'Monge Natural Superpremium', presentations: ['2.5 kg', '12 kg'], basePrice: 42 }
+  { id: 'rc', name: 'Royal Canin', presentations: ['3 kg', '7.5 kg', '15 kg'], basePrice: 192000 },
+  { id: 'hills', name: 'Hill\'s Science Diet', presentations: ['2.5 kg', '7 kg', '14 kg'], basePrice: 208000 },
+  { id: 'proplan', name: 'Purina Pro Plan', presentations: ['3 kg', '7.5 kg', '15 kg'], basePrice: 180000 },
+  { id: 'taste', name: 'Taste of the Wild', presentations: ['2 kg', '5.6 kg', '12.2 kg'], basePrice: 224000 },
+  { id: 'monge', name: 'Monge Natural Superpremium', presentations: ['2.5 kg', '12 kg'], basePrice: 168000 }
 ];
 
 export const PHARMACY_PRODUCTS = [
-  { id: 'bravecto', name: 'Bravecto Antiparasitario (1 tableta masticable - 3 meses)', category: 'Antiparasitario', normalPrice: 38.00 },
-  { id: 'nexgard', name: 'NexGard Spectra (Protección mensual completa)', category: 'Antiparasitario', normalPrice: 24.50 },
-  { id: 'condrovet', name: 'Condrovet Force HA (Salud Articular 120 comp.)', category: 'Suplemento', normalPrice: 42.00 },
-  { id: 'omega3', name: 'Aceite de Salmón Puro Omega 3 & 6 (500ml)', category: 'Nutrición', normalPrice: 21.00 },
-  { id: 'shampoo', name: 'Shampoo Antiséptico & Dermatológico (250ml)', category: 'Cuidado & Piel', normalPrice: 16.50 },
-  { id: 'colirio', name: 'Gotas Oftálmicas Lubricantes Veterinarias', category: 'Oftalmología', normalPrice: 14.00 }
+  { id: 'bravecto', name: 'Bravecto Antiparasitario (1 tableta masticable - 3 meses)', category: 'Antiparasitario', normalPrice: 152000 },
+  { id: 'nexgard', name: 'NexGard Spectra (Protección mensual completa)', category: 'Antiparasitario', normalPrice: 98000 },
+  { id: 'condrovet', name: 'Condrovet Force HA (Salud Articular 120 comp.)', category: 'Suplemento', normalPrice: 168000 },
+  { id: 'omega3', name: 'Aceite de Salmón Puro Omega 3 & 6 (500ml)', category: 'Nutrición', normalPrice: 84000 },
+  { id: 'shampoo', name: 'Shampoo Antiséptico & Dermatológico (250ml)', category: 'Cuidado & Piel', normalPrice: 66000 },
+  { id: 'colirio', name: 'Gotas Oftálmicas Lubricantes Veterinarias', category: 'Oftalmología', normalPrice: 56000 }
 ];
 
 export const DEMO_PET_PHOTOS = [
